@@ -54,6 +54,7 @@
         <li><a href="@Url.RouteUrl("Homepage")">@T("Homepage")</a></li>
     }
     @if (!Model.UseAjaxMenu)
+	// test
     {
         var rootCategories = Model.Categories.Where(x => x.IncludeInTopMenu).ToList();
         @foreach (var category in rootCategories)
