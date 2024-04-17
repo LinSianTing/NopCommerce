@@ -22,6 +22,7 @@ namespace Nop.Web.Models.Customer
         public int Tab { get; set; }
         public string ItemClass { get; set; }
     }
+
     public enum CustomerNavigationEnum
     {
         Info = 0,
