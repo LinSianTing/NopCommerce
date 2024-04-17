@@ -1152,6 +1152,21 @@ namespace Nop.Web.Controllers
 
         #endregion
 
+        #region My account / MyLunchBox,By周宇謙 
+        public virtual async Task<IActionResult> MyLunchBox()
+        {
+            var customer = await _workContext.GetCurrentCustomerAsync();
+            if (!await _customerService.IsRegisteredAsync(customer))
+                return Challenge();
+
+            var model = new CustomerInfoModel();
+            model = await _customerModelFactory.PrepareCustomerInfoModelAsync(model, customer, false);
+
+            return View(model);
+        }
+
+        #endregion
+
         #region My account / Info
 
         public virtual async Task<IActionResult> Info()
