@@ -40,6 +40,7 @@ public abstract partial class BaseAttribute : BaseEntity, ILocalizedEntity
     /// <summary>
     /// A value indicating whether this attribute should have values
     /// </summary>
+    /// 看起來是從這邊設值的
     public bool ShouldHaveValues
     {
         get

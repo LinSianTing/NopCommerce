@@ -250,6 +250,16 @@ public partial class CustomerSettings : ISettings
     #region Form fields
 
     /// <summary>
+    /// Gets or sets a value indicating whether 'MyLunchboxId' is enabled
+    /// </summary>
+    public bool MyLunchboxIdEnabled { get; set; }
+
+    /// <summary>
+    /// Gets or sets a value indicating whether 'MyLunchboxId' is required
+    /// </summary>
+    public bool MyLunchboxIdRequired { get; set; }
+
+    /// <summary>
     /// Gets or sets a value indicating whether 'First Name' is enabled
     /// </summary>
     public bool FirstNameEnabled { get; set; }
