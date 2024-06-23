@@ -50,6 +50,11 @@ public partial record RegisterModel : BaseNopModel
 
     public bool NeutralGenderEnabled { get; set; }
 
+    public bool MyLunchboxIdEnabled { get; set; }
+    [NopResourceDisplayName("Account.Fields.MyLunchboxId")]
+    public string MyLunchboxId { get; set; }
+    public bool MyLunchboxIdRequired { get; set; }
+
     public bool FirstNameEnabled { get; set; }
     [NopResourceDisplayName("Account.Fields.FirstName")]
     public string FirstName { get; set; }

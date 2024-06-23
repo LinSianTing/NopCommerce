@@ -210,6 +210,8 @@ public partial class CustomerModelFactory : ICustomerModelFactory
         var store = await _storeContext.GetCurrentStoreAsync();
         if (!excludeProperties)
         {
+            model.MyLunchBoxId = customer.MyLunchBoxId;
+            //看起來是跟model有關宣告的地方
             model.VatNumber = customer.VatNumber;
             model.FirstName = customer.FirstName;
             model.LastName = customer.LastName;
@@ -299,7 +301,10 @@ public partial class CustomerModelFactory : ICustomerModelFactory
 
         model.DisplayVatNumber = _taxSettings.EuVatEnabled;
         model.VatNumberStatusNote = await _localizationService.GetLocalizedEnumAsync(customer.VatNumberStatus);
+        model.MyLunchBoxIdEnabled = _customerSettings.MyLunchboxIdEnabled;
+        model.MyLunchBoxIdRequired = _customerSettings.MyLunchboxIdRequired;
         model.FirstNameEnabled = _customerSettings.FirstNameEnabled;
+        // 宣告完後給予參數值的地方
         model.LastNameEnabled = _customerSettings.LastNameEnabled;
         model.FirstNameRequired = _customerSettings.FirstNameRequired;
         model.LastNameRequired = _customerSettings.LastNameRequired;
@@ -403,6 +408,8 @@ public partial class CustomerModelFactory : ICustomerModelFactory
             model.VatNumber = customer.VatNumber;
 
         //form fields
+        model.MyLunchboxIdEnabled = _customerSettings.MyLunchboxIdEnabled;
+        model.MyLunchboxIdRequired = _customerSettings.MyLunchboxIdRequired;
         model.FirstNameEnabled = _customerSettings.FirstNameEnabled;
         model.LastNameEnabled = _customerSettings.LastNameEnabled;
         model.FirstNameRequired = _customerSettings.FirstNameRequired;
@@ -987,6 +994,7 @@ public partial class CustomerModelFactory : ICustomerModelFactory
                 AttributeControlType = attribute.AttributeControlType,
             };
 
+            //看起來是在這邊給值的
             if (attribute.ShouldHaveValues)
             {
                 //values
