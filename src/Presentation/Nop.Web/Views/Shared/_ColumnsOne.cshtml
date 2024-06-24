@@ -1,10 +1,54 @@
 ﻿@{
     Layout = "_Root";
 }
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title> TheLoke - Multipurpose eCommerce HTML Template </title>
+	<meta name="robots" content="noindex, follow" />
+	<meta name="description" content="TheLoke is a Multipurpose eCommerce HTML Template. The Template has 7 demos for various category of business like Electronics, Fashion, Furniture, Handmade, etc. It comes with a variety of customisation options which you can use to build a unique website.">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<rel ="profile" href="https://gmpg.org/xfn/11">
+		<rel ="canonical" href="https://htmldemo.hasthemes.com/theloke/index.html" />
 
+		<!-- Open Graph (OG) meta tags are snippets of code that control how URLs are displayed when shared on social media  -->
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="TheLoke - Multipurpose eCommerce HTML Template" />
+		<meta property="og:url" content="https://htmldemo.hasthemes.com/theloke/index.html" />
+		<meta property="og:site_name" content="TheLoke - Multipurpose eCommerce HTML Template" />
+		<!-- For the og:image content, replace the # with a of an image -->
+		<meta property="og:image" content="#" />
+		<meta property="og:description" content="TheLoke is a Multipurpose eCommerce HTML Template. The Template has 7 demos for various category of business like Electronics, Fashion, Furniture, Handmade, etc. It comes with a variety of customisation options which you can use to build a unique website." />
+		<!-- Add site Favicon -->
+		<rel ="icon" href="~/wwwroot/images/favicon/cropped-favicon-32x32.png" sizes="32x32" />
+		<rel ="icon" href="~/wwwroot/images/favicon/cropped-favicon-192x192.png" sizes="192x192" />
+		<rel ="apple-touch-icon" href="~/wwwroot/images/favicon/cropped-favicon-180x180.png" />
+		<meta name="msapplication-TileImage" content="~/wwwroot/images/favicon/cropped-favicon-270x270.png" />
+
+		<!-- All CSS is here
+		============================================ -->
+
+		<rel ="stylesheet" href="~/wwwroot/css/vendor/bootstrap.min.css">
+			<rel ="stylesheet" href="~/wwwroot/css/vendor/line-awesome.min.css">
+				<rel ="stylesheet" href="~/wwwroot/css/vendor/elegant.css">
+					<rel ="stylesheet" href="~/wwwroot/css/vendor/linear-icon.css">
+						<rel ="stylesheet" href="~/wwwroot/css/vendor/simple-line-icons.css">
+							<rel ="stylesheet" href="~/wwwroot/css/plugins/slick.css">
+								<rel ="stylesheet" href="~/wwwroot/css/plugins/easyzoom.css">
+									<rel ="stylesheet" href="~/wwwroot/css/plugins/magnific-popup.css">
+										<rel ="stylesheet" href="~/wwwroot/css/plugins/select2.min.css">
+											<rel ="stylesheet" href="~/wwwroot/css/plugins/animate.css">
+												<rel ="stylesheet" href="~/wwwroot/css/plugins/aos.css">
+													<rel ="stylesheet" href="~/wwwroot/css/plugins/jquery-ui.css">
+														<rel ="stylesheet" href="~/wwwroot/css/style.css">
+
+
+</head>
 @await RenderSectionAsync("Breadcrumb", false)
 
 <div class="center-1">
+
     @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.MainColumnBefore })
     @RenderBody()
     @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.MainColumnAfter })
