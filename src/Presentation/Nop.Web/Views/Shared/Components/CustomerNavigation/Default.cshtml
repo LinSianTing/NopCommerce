@@ -5,6 +5,7 @@
     </div>
     <div class="listbox">
         <ul class="list">
+			@* 準備撈取選單內容(裝載)	*@
             @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.AccountNavigationBefore, additionalData = Model })
             @foreach (var item in Model.CustomerNavigationItems)
             {
@@ -12,6 +13,9 @@
                     <a href="@Url.RouteUrl(item.RouteName)">@(item.Title)</a>
                 </li>
             }
+			<li class="active">
+				<a href="MyLunchBox">My Lunch Box</a>
+			</li>
             @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.AccountNavigationAfter, additionalData = Model })
         </ul>
     </div>

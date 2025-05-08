@@ -29,6 +29,12 @@ public partial class Customer : BaseEntity, ISoftDeletedEntity
     public string Email { get; set; }
 
     /// <summary>
+    /// Gets or sets the My LunchBox ID
+    /// </summary>
+    /// 看起來客戶的各項資料要從這邊先初始化
+    public string? MyLunchBoxId { get; set; }
+
+    /// <summary>
     /// Gets or sets the first name
     /// </summary>
     public string FirstName { get; set; }
@@ -257,6 +263,7 @@ public partial class Customer : BaseEntity, ISoftDeletedEntity
         get => TaxDisplayTypeId.HasValue ? (TaxDisplayType)TaxDisplayTypeId : null;
         set => TaxDisplayTypeId = value.HasValue ? (int)value : null;
     }
+    
 
     #endregion
 }
